@@ -1,0 +1,67 @@
+body{
+  background-image: url('./spaceImage.jpg');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.builder-box{
+  /* color: purple; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 25vw;
+  margin-top: 10vh;
+  /* background-color: pink; */
+  width: 50vw;
+  height: 150px;
+}
+
+.title{
+  color: white;
+  font-size: 30px;
+}
+
+.main-header {
+  width: 100%;
+  background-color: black;
+  height: 75px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-items{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 25vw;
+}
+
+.nav-buttons{
+  padding: 5px;
+  background-color: #17347c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: white
+}
+
+.fleet-picker{
+  color: white;
+  font-size: 24px;
+
+}
+
+.choice-preview{
+  color: white;
+  font-size: 30px;
+  width: 50vw;
+  height: 50vh;
+  background-color: blue;
+  margin-left: 25vw;
+  display: flex;
+  justify-content: space-around;
+}
