@@ -8,8 +8,8 @@ let data = {
     crew: ['Yellow Minions', 
     'Tortuga Drunks', 
     'DevMtn Cohort', 
-    'Umpa Lumpas', 
     'U.S.A Military', 
+    'Umpa Lumpas', 
     'Star Fleet Command'],
     rocket:['SuperHeavy Starship', 
     'The Black Pearl', 
@@ -28,7 +28,7 @@ let data = {
 
 
 module.exports = {
-    getCaptain: (req, res) => {
-        res.status(200).send(data.captain);
+    getData: (req, res) => {
+        res.status(200).send(data);
     }
 }

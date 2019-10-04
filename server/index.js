@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const ctrl = require('./Controllers/Controller');
 
-app.get('/api/captain', ctrl.getCaptain)
+app.get('/api/data', ctrl.getData)
 
 
 

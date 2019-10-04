@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import MainHeader from '../MainHeader';
 
 export default class MyFleet extends Component {
@@ -7,6 +7,10 @@ export default class MyFleet extends Component {
         return (
             <div>
                 <MainHeader />
+                <div className='fleet'>
+                    <div className='fleet-items'>Fleet Title:</div>
+                    <div className='fleet-items'>Fleet Title:</div>
+                </div>
             </div>
         )
     }

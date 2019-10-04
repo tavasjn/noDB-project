@@ -4,6 +4,7 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .builder-box{
@@ -11,10 +12,10 @@ body{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-left: 25vw;
+  margin-left: 12vw;
   margin-top: 10vh;
   /* background-color: pink; */
-  width: 50vw;
+  width: 75vw;
   height: 150px;
 }
 
@@ -58,10 +59,50 @@ body{
 .choice-preview{
   color: white;
   font-size: 30px;
-  width: 50vw;
+  width: 75vw;
   height: 50vh;
-  background-color: blue;
-  margin-left: 25vw;
+  /* background-color: blue; */
+  margin-left: 12vw;
   display: flex;
+  justify-content: space-around;
+}
+
+.builder-intro{
+  color: white;
+  font-size: 30px;
+  height: 10vh;
+  /* background-color: blue; */
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.builder-intro-home{
+  color: white;
+  font-size: 40px;
+  height: 45vh;
+  /* background-color: blue; */
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fleet-items{
+  color: white;
+  font-size: 25px;
+  width: 75vw;
+  height: 10vh;
+  /* background-color: blue; */
+}
+
+.fleet{
+  width: 100vw;
+  height: 180vh;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }

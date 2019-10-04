@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './reset.css';
 import './App.css';
-import {HashRouter, Link} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 import routes from './routes';
 // import RocketPage from './Components/RocketPage/RocketPage';
 
@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <HashRouter>
         <div>
-          {/* <RocketPage/> */}
+          
         </div>
         {routes}
       </HashRouter>
