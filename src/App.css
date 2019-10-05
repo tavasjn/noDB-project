@@ -16,7 +16,7 @@ body{
   margin-top: 10vh;
   /* background-color: pink; */
   width: 75vw;
-  height: 150px;
+  height: 115px;
 }
 
 .title{
@@ -94,15 +94,15 @@ body{
 .fleet-items{
   color: white;
   font-size: 25px;
-  width: 75vw;
-  height: 10vh;
-  /* background-color: blue; */
+  width: 100vw;
+  height: 20vh;
+  background-color: rgb(0, 0, 255, .5);
 }
 
-.fleet{
+/* .fleet{
   width: 100vw;
   height: 180vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
+} */

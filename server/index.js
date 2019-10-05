@@ -4,6 +4,8 @@ const ctrl = require('./Controllers/Controller');
 
 app.get('/api/data', ctrl.getData)
 
+app.post('/api/captain', ctrl.postCaptain)
+
 
 
 const port = 4450;

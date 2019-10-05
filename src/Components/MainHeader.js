@@ -14,7 +14,7 @@ class RocketPage extends Component {
                     </div>
                     <div className='nav-items'>
                         <Link to='/' className='nav-buttons'>HOME</Link>
-                        <Link to='/MyFleet' className='nav-buttons'>My Fleet</Link>
+                        {/* <Link to='/MyFleet' className='nav-buttons'>My Fleet</Link> */}
                         <Link to='/Learn' className='nav-buttons'>Learn</Link>
                         <Link to='/RocketPage' className='nav-buttons'>Design Your Fleet</Link>
                     </div>

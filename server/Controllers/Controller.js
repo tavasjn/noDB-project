@@ -30,5 +30,16 @@ let data = {
 module.exports = {
     getData: (req, res) => {
         res.status(200).send(data);
+    },
+
+    postCaptain: (req, res) => {
+        // let {data, captain} = req.query;
+        console.log(req.query.captain, req.query.rocket)
+        // data.captain.push({...req.query, data, captain});
+        // id++;
+        // res.status(200).send(data, captain);
     }
+
+
+    // deleteData: ()
 }

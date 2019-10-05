@@ -3,6 +3,7 @@ import '../../App.css';
 import Header from '../MainHeader';
 import axios from 'axios';
 import Mapped from '../Mapped/Mapped';
+import MyFleet from '../MyFleet/MyFleet';
 
 class RocketPage extends Component {
     constructor() {
@@ -16,6 +17,8 @@ class RocketPage extends Component {
                 rocket: [],
                 destination: []
             },
+
+            displayFleet:[],
 
             captain: false,
             crew: false,
@@ -61,6 +64,13 @@ class RocketPage extends Component {
         })
     }
 
+    handleChange = (e, key) => {
+        let copy = [...this.state[key], e.target.value]
+        this.setState({
+            [key]: e.target.value
+        })
+    }
+
 
     render() {
         console.log(this.state)
@@ -84,9 +94,9 @@ class RocketPage extends Component {
                         <div>
                             {
                                 this.state.fleet.captain.map((element, index) => {
-                                    return <Mapped element={element} />
+                                    return <Mapped handleChange={this.handleChange} element={element} />
                                 })
-                            }</div>) : (null)}
+                            }<input type="text" onChange={e => this.handleChange(e, "captain")}/><button>Add</button></div>) : (null)}
                     {this.state.crew ? (
                         <div>
                             {
@@ -108,6 +118,9 @@ class RocketPage extends Component {
                                 return <Mapped element={element} />
                             })
                             }</div>) : (null)}
+                </div>
+                <div>
+                    <MyFleet displayFleet={this.state.displayFleet}/>
                 </div>
             </div>
         )

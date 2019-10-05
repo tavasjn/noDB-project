@@ -8,7 +8,7 @@ class Mapped extends React.Component {
         return(
             <div>
                 {this.props.element}
-                <button>Add</button>
+                <button >Add</button>
             </div>
         )
     }
