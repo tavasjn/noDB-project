@@ -64,10 +64,9 @@ class RocketPage extends Component {
         })
     }
 
-    handleChange = (e, key) => {
-        let copy = [...this.state[key], e.target.value]
+    handleChange = (e) => {
         this.setState({
-            [key]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -96,7 +95,7 @@ class RocketPage extends Component {
                                 this.state.fleet.captain.map((element, index) => {
                                     return <Mapped handleChange={this.handleChange} element={element} />
                                 })
-                            }<input type="text" onChange={e => this.handleChange(e, "captain")}/><button>Add</button></div>) : (null)}
+                            }<input type="text" name="captainInput" onChange={e => this.handleChange(e)}/><button>Add</button></div>) : (null)}
                     {this.state.crew ? (
                         <div>
                             {

@@ -9,6 +9,8 @@ class Mapped extends React.Component {
             <div>
                 {this.props.element}
                 <button >Add</button>
+                <button>Edit</button>
+                <button>Delete</button>
             </div>
         )
     }
