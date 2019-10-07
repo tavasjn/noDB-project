@@ -18,12 +18,18 @@ class RocketPage extends Component {
                 destination: []
             },
 
-            displayFleet:[],
+            displayFleet: [],
 
             captain: false,
             crew: false,
             rocket: false,
             destination: false,
+            editCheck: [false, -1],
+
+            captainInput: "",
+            crewInput: "",
+            rocketInput: "",
+            destinationInput: "",
         }
     }
 
@@ -68,11 +74,93 @@ class RocketPage extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
+        // console.log(this.state)
+    }
+
+    delete = (e) => {
+        // console.log(e.target.name)
+        // console.log(e.target.id)
+        axios.delete(`http://localhost:4450/api/${e.target.name}/${e.target.id}`)
+            .then(res => this.setState({ fleet: res.data }))
+            .catch(err => console.log(err))
+
+        // console.log(this.state.rocket)
+    }
+
+    add = (e, id) => {
+        // console.log(e.target.index)
+        axios.post(`/api/${e.target.name}/${id}`).then(res =>
+            this.setState({
+                data: res.data,
+                input: ""
+            }))
+
+            // console.log(this.state.add)
+    }
+
+    addCaptain = (e) => {
+        // console.log(e.target.name)
+        axios.post(`/api/${e.target.name}/${e.target.id}`).then(res => {
+            this.setState({
+                displayFleet: res.data,
+                input: ""
+            })
+        })
+    }
+    addCrew = (e) => {
+        // console.log(e.target.name)
+        axios.post(`/api/${e.target.name}/${e.target.id}`).then(res => {
+            this.setState({
+                displayFleet: res.data,
+                input: ""
+            })
+        })
+    }
+    addRocket = (e) => {
+        // console.log(e.target.name)
+        axios.post(`/api/${e.target.name}/${e.target.id}`).then(res => {
+            this.setState({
+                displayFleet: res.data,
+                input: ""
+            })
+        })
+    }
+    addDestination = (e) => {
+        // console.log(e.target.name)
+        axios.post(`/api/${e.target.name}/${e.target.id}`).then(res => {
+            this.setState({
+                displayFleet: res.data,
+                input: ""
+            })
+        })
+    }
+
+    edit = (e) => {
+        // console.log(e.target.id)
+        this.setState({ editCheck: [true, e.target.id] })
+
+    }
+
+    save = (e) => {
+        // console.log(e.target.name)
+        const body = {
+            [e.target.name]: this.state[e.target.name + "Input"]
+        }
+
+        // console.log(body)
+
+        axios.put(`http://localhost:4450/api/${e.target.name}/${e.target.id}`, body)
+            .then(res => this.setState({
+                fleet: res.data,
+                editCheck: [false, -1]
+            }))
+            .catch(err => console.log(err))
+
     }
 
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         return (
             <div>
                 <header>
@@ -93,33 +181,33 @@ class RocketPage extends Component {
                         <div>
                             {
                                 this.state.fleet.captain.map((element, index) => {
-                                    return <Mapped handleChange={this.handleChange} element={element} />
+                                    return <Mapped name="captain" id={index} delete={this.delete} handleChange={this.handleChange} element={element} edit={this.edit} editCheck={this.state.editCheck} save={this.save} handleChange={this.handleChange} add={this.add} />
                                 })
-                            }<input type="text" name="captainInput" onChange={e => this.handleChange(e)}/><button>Add</button></div>) : (null)}
+                            }</div>) : (null)}
                     {this.state.crew ? (
                         <div>
                             {
                                 this.state.fleet.crew.map((element, index) => {
-                                    return <Mapped element={element} />
+                                    return <Mapped name="crew" id={index} delete={this.delete} element={element} edit={this.edit} editCheck={this.state.editCheck} save={this.save} handleChange={this.handleChange} add={this.add}/>
                                 })
                             }</div>) : (null)}
                     {this.state.rocket ? (
                         <div>
                             {
                                 this.state.fleet.rocket.map((element, index) => {
-                                    return <Mapped element={element} />
+                                    return <Mapped name="rocket" id={index} delete={this.delete} element={element} edit={this.edit} editCheck={this.state.editCheck} save={this.save} handleChange={this.handleChange} add={this.add}/>
                                 })
                             }</div>) : (null)}
                     {this.state.destination ? (
                         <div>
-                        {
-                            this.state.fleet.destination.map((element, index) => {
-                                return <Mapped element={element} />
-                            })
+                            {
+                                this.state.fleet.destination.map((element, index) => {
+                                    return <Mapped name="destination" id={index} delete={this.delete} element={element} edit={this.edit} editCheck={this.state.editCheck} save={this.save} handleChange={this.handleChange} add={this.add}/>
+                                })
                             }</div>) : (null)}
                 </div>
-                <div>
-                    <MyFleet displayFleet={this.state.displayFleet}/>
+                <div className='fleet-display'>
+                    <MyFleet displayFleet={this.state.data} />
                 </div>
             </div>
         )

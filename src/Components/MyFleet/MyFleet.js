@@ -4,12 +4,19 @@ import React, { Component } from "react";
 
 export default class MyFleet extends Component {
     render() {
+        console.log(this.props.displayFleet)
         return (
             <div>
                 {/* <MainHeader /> */}
                 <div className='fleet'>
-                    <div className='fleet-items'>Fleet Title:</div>
-                    <div className='fleet-items'></div>
+                    <div className='fleet-title'>Fleet Title:<input></input></div>
+                    <div className='fleet-items'>
+                        {this.props.displayFleet ? (<div>{this.props.displayFleet.captain}</div>) : (null)}
+                        {this.props.displayFleet ? (<div>{this.props.displayFleet.crew}</div>) : (null)}
+                        {this.props.displayFleet ? (<div>{this.props.displayFleet.rocket}</div>) : (null)}
+                        {this.props.displayFleet ? (<div>{this.props.displayFleet.destination}</div>) : (null)}
+
+                    </div>
                 </div>
             </div>
         )
