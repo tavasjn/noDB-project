@@ -3,26 +3,26 @@ let data = {
     'Jack Sparrow', 
     'BUTLY', 
     'Tavas', 
-    'John', 
-    'Donald Trump'],
+    'Donald Trump', 
+    'Name Here'],
     crew: ['Yellow Minions', 
-    'Tortuga Drunks', 
+    'Star Fleet Command', 
     'DevMtn Cohort', 
     'U.S.A Military', 
     'Umpa Lumpas', 
-    'Star Fleet Command'],
+    'Crew Here'],
     rocket:['SuperHeavy Starship', 
     'The Black Pearl', 
     'USS Discovery', 
     'USS Enterprise', 
     'Millennium Falcon', 
-    'The Death Star'],
+    'SpaceShip Here'],
     destination: ['Colonize Mars', 
-    'Colonize The Moon', 
+    'Dagobah System', 
     'Titan', 
     'The Final Frontier', 
     'Tatooine', 
-    'Dagobah System']
+    'Destination Here']
 }
 
 let displayFleet = {
