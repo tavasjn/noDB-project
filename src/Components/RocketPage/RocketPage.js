@@ -207,7 +207,7 @@ class RocketPage extends Component {
                             }</div>) : (null)}
                 </div>
                 <div className='fleet-display'>
-                    <MyFleet displayFleet={this.state.data} />
+                    <MyFleet displayFleet={this.state.data} handleChange={this.handleChange} edit={this.edit} editCheck={this.state.editCheck} save={this.save}/>
                 </div>
             </div>
         )

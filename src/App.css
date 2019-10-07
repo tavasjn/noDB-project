@@ -96,7 +96,7 @@ body{
 }
 
 .fleet-display {
-  background-color: blue;
+  background-color:rgba(90, 89, 89, 0.884);
   height: 150px;
   width: 100%;
   color: white;
